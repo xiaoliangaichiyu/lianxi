@@ -21,7 +21,7 @@ for i in text:
     print(id,title)
 
     js_code = execjs.compile(open('aaa.js',encoding='utf-8').read())
-    d = {"id":f"[{id}]","lv":-1,"tv":-1,"csrf_token":"db9f233dd05de941d8c19d94eaf9f14f"}
+    d = {"id":f"{id}","lv":-1,"tv":-1,"csrf_token":"db9f233dd05de941d8c19d94eaf9f14f"}
     result = js_code.call('getsign',d)
     print(result)
 
@@ -37,6 +37,7 @@ for i in text:
     resp = requests.get(url=m_url, headers=headers).content
     with open('./yy/aaa.mp3', 'ab') as f:
         f.write(resp)
+
 
 
 
